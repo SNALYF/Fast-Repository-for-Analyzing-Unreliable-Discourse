@@ -2,36 +2,41 @@ import csv
 import json
 import os
 
-def convert_csv_to_jsonl(csv_path, jsonl_path):
-    with open(csv_path, mode='r', encoding='utf-8') as csv_file:
-        reader = csv.DictReader(csv_file)
-        data = []
-        for row in reader:
-            # Handle tactic_primary
-            tactic = row.get('tactic_primary')
-            if tactic is None or tactic.lower() == 'null' or tactic.strip() == '':
-                tactic = None
-            
-            # Handle entities
-            entities = row.get('entities', '')
-            if entities.lower() == 'null':
-                entities = ""
-            
-            # Handle notes
-            notes = row.get('notes', '')
-            if notes.lower() == 'null':
-                notes = ""
+def convert_excel_to_jsonl(excel_path, jsonl_path, sheet_name="Annotations"):
+    # Read specifically sheet 3 (named "Annotations")
+    try:
+        df = pd.read_excel(excel_path, sheet_name=sheet_name)
+    except Exception as e:
+        print(f"Error reading Excel file: {e}")
+        return
 
-            obj = {
-                "label": row.get('label'),
-                "text": row.get('text'),
-                "text_zh": "", # English-only source
-                "scenario": row.get('scenario'),
-                "tactic_primary": tactic,
-                "entities": entities,
-                "notes": notes
-            }
-            data.append(obj)
+    # Replace all NaN/empty cells with empty strings to avoid errors
+    df = df.fillna('')
+    data = []
+
+    for index, row in df.iterrows():
+        tactic = str(row.get('tactic_primary', '')).strip()
+        if not tactic or tactic.lower() == 'null':
+            tactic = None
+        
+        entities = str(row.get('entities', '')).strip()
+        if entities.lower() == 'null':
+            entities = ""
+        
+        notes = str(row.get('notes', '')).strip()
+        if notes.lower() == 'null':
+            notes = ""
+
+        obj = {
+            "label": str(row.get('label', '')).strip(),
+            "text": str(row.get('text', '')).strip(),
+            "text_zh": "", # English-only source
+            "scenario": str(row.get('scenario', '')).strip(),
+            "tactic_primary": tactic,
+            "entities": entities,
+            "notes": notes
+        }
+        data.append(obj)
     
     with open(jsonl_path, mode='w', encoding='utf-8') as jsonl_file:
         # Based on annotation_tc.jsonl, it's a JSON array with trailing comma or just a list

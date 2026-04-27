@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions – Fast Repository for Analyzing Unreliable Discourse</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="top-nav">
+        <div class="logo"><span class="highlight-letter">F</span>ast <span class="highlight-letter">R</span>epository
+            for <span class="highlight-letter">A</span>nalyzing <span class="highlight-letter">U</span>nreliable <span
+                class="highlight-letter">D</span>iscourse</div>
+        <nav>
+            <a href="index.html" title="Search the corpus">Search</a>
+            <a href="statistics.html" title="View corpus statistics">Statistics</a>
+            <a href="functions.html" class="active" title="About the Linguistica project">Functions</a>
+            <a href="about.html" title="About the Linguistica project">About</a>
+        </nav>
+
+    </header>
+
+    <main class="page-container">
+        <h1>How to Use This Website</h1>
+        <p class="page-subtitle">A guide to all the features and tools available in the Fraud Corpus interface.</p>
+
+        <div class="search-container" style="max-width: 800px; margin: 30px auto; padding: 20px; background: rgba(255, 255, 255, 0.05); border: 1px solid #ccc; border-radius: 8px;">
+            <h2 style="margin-top: 0;">Corpus Search</h2>
+            
+            <div class="search-controls" style="display: flex; gap: 10px; margin-bottom: 20px; align-items: center; flex-wrap: wrap;">
+                <input type="text" id="search-query" placeholder="Search English or Chinese text..." style="flex-grow: 1; padding: 10px; border-radius: 4px; border: 1px solid #aaa;">
+                
+                <select id="search-label" style="padding: 10px; border-radius: 4px;">
+                    <option value="">All Labels</option>
+                    <option value="ham">Ham</option>
+                    <option value="phish">Phish</option>
+                    <option value="spam">Spam</option>
+                </select>
+
+                <label style="display: flex; align-items: center; gap: 5px; font-size: 0.9em;">
+                    <input type="checkbox" id="search-annotated"> Annotated Only
+                </label>
+
+                <button id="search-btn" style="padding: 10px 20px; cursor: pointer; background-color: #6c63ff; color: white; border: none; border-radius: 4px; font-weight: bold;">Search</button>
+            </div>
+
+            <div id="search-stats" style="margin-bottom: 15px; font-size: 0.9em; opacity: 0.8;"></div>
+            <div id="search-results" style="display: flex; flex-direction: column; gap: 15px;"></div>
+        </div>
+
+            <!-- Corpus Selection -->
+            <div class="feature-card">
+                <div class="feature-icon green">📂</div>
+                <h3>Corpus Selection</h3>
+                <p>Use the left sidebar on the Search page to switch between different corpora.</p>
+                <ul>
+                    <li><strong>English</strong> – Search only English-language documents</li>
+                    <li><strong>Chinese</strong> – Search only Chinese-language documents</li>
+                    <li><strong>All</strong> – Search across both corpora simultaneously</li>
+                </ul>
+            </div>
+
+            <!-- Statistics -->
+            <div class="feature-card">
+                <div class="feature-icon yellow">📊</div>
+                <h3>Statistics</h3>
+                <p>View detailed statistics and visualizations about the corpus data.</p>
+                <ul>
+                    <li>Filter statistics by corpus type: English, Chinese, Annotated, or All</li>
+                    <li>View total document counts, annotated vs. raw distribution</li>
+                    <li>Interactive charts with selectable chart types (Doughnut, Bar, Pie, Polar Area)</li>
+                    <li>Detailed label breakdown table with percentage bars</li>
+                </ul>
+            </div>
+
+            <!-- Query Builder -->
+            <div class="feature-card">
+                <div class="feature-icon blue">🛠️</div>
+                <h3>Query Builder</h3>
+                <p>Build advanced search queries without memorizing query syntax.</p>
+                <ul>
+                    <li>Combine multiple search conditions with AND / OR operators</li>
+                    <li>Filter by metadata fields such as label type</li>
+                    <li>Access it through the <strong>"Query Builder"</strong> link on the Search page</li>
+                </ul>
+            </div>
+
+            <!-- Metadata Filters -->
+            <div class="feature-card">
+                <div class="feature-icon red">🏷️</div>
+                <h3>Metadata Filters</h3>
+                <p>Narrow your search results by document metadata on the right sidebar.</p>
+                <ul>
+                    <li><strong>Ham / Spam / Phishing</strong> – Filter by email classification label</li>
+                    <li><strong>Concordance View</strong> – See search terms in context with surrounding text</li>
+                    <li><strong>Frequency List</strong> – View word frequency distributions for your query</li>
+                </ul>
+            </div>
+
+            <!-- About -->
+            <div class="feature-card">
+                <div class="feature-icon purple">ℹ️</div>
+                <h3>About</h3>
+                <p>Learn about the project background, the team behind this corpus, and the origins of the dataset.</p>
+                <ul>
+                    <li>Project overview and research goals</li>
+                    <li>Team member profiles</li>
+                    <li>Dataset source and collection methodology</li>
+                </ul>
+            </div>
+
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

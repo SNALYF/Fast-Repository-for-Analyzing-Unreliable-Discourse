@@ -8,35 +8,116 @@ Tags: `Fraud Analysis` | `AI Safety` | `Social Engineering` | `Multilingual NLP`
 ## Project Structure
 ```
 Root
+├── LICENSE
+├── README.md
 ├── data/
-│   ├── preprocessed/
+│   ├── processed/
+│   │   ├── test.jsonl
+│   │   ├── train.jsonl
+│   │   └── validation.jsonl
 │   ├── raw/
 │   │   └── reddit_processed.jsonl
 │   └── source/
 │       └── resources.md
 ├── documentation/
-│   ├── 01_sprint/
+│   ├── 01_sprint_523/
 │   │   └── preprocess.md
-│   ├── 02_sprint/
+│   ├── 01_sprint_581/
+│   │   └── team_contract.md
+│   ├── 02_sprint_523/
 │   │   ├── Script Documentation/
+│   │   │   ├── corpus_stats.md
+│   │   │   ├── token_count.md
+│   │   │   └── website_scrape.md
 │   │   ├── annotation_plan.md
 │   │   ├── corpus_analysis.md
 │   │   ├── corpus_readme.md
 │   │   └── references.md
-│   └── TeamContract.md
+│   ├── 03_sprint_523/
+│   │   ├── Annotation/
+│   │   │   ├── annotation_dz.csv
+│   │   │   ├── annotation_mw.jsonl
+│   │   │   ├── annotation_tc.json
+│   │   │   ├── annotation_tc.jsonl
+│   │   │   ├── annotation_yh.jsonl
+│   │   │   ├── cassie_gold.jsonl
+│   │   │   ├── final/
+│   │   │   │   └── annotations_best.jsonl
+│   │   │   ├── iaa_study.raw
+│   │   │   └── raw/
+│   │   │       └── cassie-annotations-return.xlsx
+│   │   ├── annotation_explanation.md
+│   │   ├── annotation_tutorial.md
+│   │   ├── build_subcorpora.md
+│   │   ├── iaa_study.md
+│   │   └── web_interface.md
+│   ├── 04_sprint_523/
+│   ├── 05_sprint_523/
+│   │   └── tutorial.md
+│   └── team_contract.md
+├── img/
+│   └── web/
+│       └── web_interface.png
+├── requirements.txt
 ├── src/
-│   ├── 02_sprint/
-│   ├── __init__.py
-│   ├── preprocess.py
-│   ├── token_count.py
-│   └── website_scrape.py
-├── tests/
-│   ├── __init__.py
-│   └── test_scrape.py
-├── .gitignore
-├── LICENSE
-├── README.md
-└── requirements.txt
+│   ├── 01_sprint_523/
+│   │   └── preprocess.py
+│   ├── 01_sprint_581/
+│   │   └── split.py
+│   ├── 02_sprint_523/
+│   │   ├── corpus_stats.py
+│   │   ├── token_count.py
+│   │   └── website_scrape.py
+│   ├── 03_sprint_523/
+│   │   ├── best_annotations.py
+│   │   ├── build_subcorpora.py
+│   │   ├── convert_csv2json_annotators.py
+│   │   ├── convert_csv2jsonl.py
+│   │   ├── corpus_translation_google_api.ipynb
+│   │   ├── csv_annotations.py
+│   │   └── generate_iaa.py
+│   ├── 04_sprint_523/
+│   │   └── web/
+│   │       ├── Dockerfile
+│   │       ├── backend/
+│   │       │   ├── analyzers.py
+│   │       │   ├── corpus_data/
+│   │       │   │   ├── annotated/
+│   │       │   │   │   └── annotations_best.jsonl
+│   │       │   │   └── raw/
+│   │       │   │       ├── chinese_sub_corpus_translated_api.json
+│   │       │   │       └── english_sub_corpus.json
+│   │       │   ├── main.py
+│   │       │   ├── test_load.py
+│   │       │   └── whoosh_index/
+│   │       │       ├── MAIN_WRITELOCK
+│   │       │       ├── MAIN_lehoiut91m1cc1ut.seg
+│   │       │       └── _MAIN_1.toc
+│   │       ├── frontend/
+│   │       │   ├── about.html
+│   │       │   ├── about.js
+│   │       │   ├── functions.html
+│   │       │   ├── img/
+│   │       │   │   ├── DarwinZhang.png
+│   │       │   │   ├── Full.jpg
+│   │       │   │   ├── MarcoWang.png
+│   │       │   │   ├── TianhaoCao.png
+│   │       │   │   └── YusenHuang.png
+│   │       │   ├── index.html
+│   │       │   ├── script.js
+│   │       │   ├── statistics.html
+│   │       │   ├── statistics.js
+│   │       │   └── style.css
+│   │       ├── img/
+│   │       │   ├── DarwinZhang.png
+│   │       │   ├── MarcoWang.png
+│   │       │   ├── TianhaoCao.png
+│   │       │   └── YusenHuang.png
+│   │       └── requirements.txt
+│   └── 05_sprint_523/
+└── tests/
+    ├── __init__.py
+    └── test_scrape.py
 ```
 ---
 ## Project Proposal
@@ -97,12 +178,19 @@ Primarily, this dataset will train classifiers to detect complex social engineer
 
 ---
 
-## References: 
+## References
 
 [Spotting malicious email messages, Government of Canada](https://www.cyber.gc.ca/en/guidance/spotting-malicious-email-messages-itsap00100)
 
 [Scam Warners - Public Forum](https://scamwarners.com/scam-message-examples)
 
 [Phishing Websites](https://archive.ics.uci.edu/dataset/327/phishing+websites)
+
+---
+### Acknowledgements 
+
+We would like to give a special thanks to Cassie Li who has volunteered their time to help with our annotations.  
+
+---
 
 _Note: Project scope, specific targets, and annotation guidelines will be refined iteratively across the upcoming sprints. There may be edits or approaches beyond the proposal or listed text above. We will do our best to keep the README updated to the format of our project._

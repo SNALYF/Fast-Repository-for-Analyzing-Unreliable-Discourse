@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About – Fast Repository for Analyzing Unreliable Discourse</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="top-nav">
+        <div class="logo"><span class="highlight-letter">F</span>ast <span class="highlight-letter">R</span>epository
+            for <span class="highlight-letter">A</span>nalyzing <span class="highlight-letter">U</span>nreliable <span
+                class="highlight-letter">D</span>iscourse</div>
+        <nav>
+            <a href="index.html" title="Search the corpus">Search</a>
+            <a href="statistics.html" title="View corpus statistics">Statistics</a>
+            <a href="functions.html" title="About the Linguistica project">Functions</a>
+            <a href="about.html" class="active" title="About the Linguistica project">About</a>
+        </nav>
+    </header>
+
+    <main class="page-container">
+        <h1>About</h1>
+        <p class="page-subtitle">Learn about the Fraud Corpus project, our team, and the data.</p>
+
+        <!-- Project Introduction -->
+        <div class="about-section">
+            <h2>Project Overview</h2>
+            <div class="about-card">
+                <p class="placeholder">[A web interface for the Fraud Corpus project, providing search, statistics, and
+                    functions for fraud detection.]</p>
+            </div>
+        </div>
+
+        <!-- Team Members — Drag & Drop Puzzle -->
+        <div class="about-section">
+            <h2>Team Members</h2>
+            <p class="puzzle-instructions">
+                Drag each member into their correct position — get all four right to unlock the team photo!
+            </p>
+
+            <div class="puzzle-layout">
+
+                <!-- Draggable card bank -->
+                <div class="puzzle-bank" id="puzzle-bank">
+                    <!-- JS-rendered cards -->
+                </div>
+
+                <!-- 2×2 drop grid -->
+                <div class="puzzle-wrapper">
+                    <div class="puzzle-grid" id="puzzle-grid">
+                        <div class="puzzle-cell" data-slot="top-left">
+                            <div class="cell-pos-label">Top Left</div>
+                        </div>
+                        <div class="puzzle-cell" data-slot="top-right">
+                            <div class="cell-pos-label">Top Right</div>
+                        </div>
+                        <div class="puzzle-cell" data-slot="bottom-left">
+                            <div class="cell-pos-label">Bottom Left</div>
+                        </div>
+                        <div class="puzzle-cell" data-slot="bottom-right">
+                            <div class="cell-pos-label">Bottom Right</div>
+                        </div>
+                    </div>
+
+                    <!-- Revealed full team photo (shown on solve) -->
+                    <div class="puzzle-reveal" id="puzzle-reveal" style="display:none;">
+                        <img src="./img/Full.jpg" alt="The full team">
+                        <div class="reveal-overlay">
+                            <span class="reveal-label">🎉 Puzzle Complete!</span>
+                            <button class="reset-puzzle-btn" id="reset-btn-reveal">Play Again</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Status row -->
+                <div class="puzzle-controls">
+                    <button class="reset-puzzle-btn" id="reset-btn">Reset</button>
+                    <span class="puzzle-status" id="puzzle-status">0 / 4 correct</span>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Dataset Origin -->
+        <div class="about-section">
+            <h2>Dataset Origin</h2>
+            <div class="about-card">
+                <p class="placeholder">The dataset is from <a
+                        href="https://www.kaggle.com/datasets/akshatsharma2/the-biggest-spam-ham-phish-email-dataset-300000">The
+                        Biggest Spam, Ham, Phish Email Dataset (300,000)</a>.</p>
+            </div>
+        </div>
+
+        <!-- Acknowledgments -->
+        <div class="about-section">
+            <h2>Acknowledgments</h2>
+            <div class="about-card">
+                <p class="placeholder">We would like to thank the creators of the dataset for their contribution to the
+                    fraud detection research.</p>
+            </div>
+        </div>
+
+        <!-- Disclaimer -->
+        <div class="about-section">
+            <h2>Disclaimer</h2>
+            <div class="about-card">
+                <p class="placeholder">The front-end is developed with the help of Claude Opus 4.6 - thinking, and
+                    Gemini 3 Pro - thinking - high.</p>
+            </div>
+        </div>
+    </main>
+    <script src="about.js"></script>
+</body>
+
+</html>
