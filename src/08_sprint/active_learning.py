@@ -121,9 +121,9 @@ def main():
     random.seed(42)
     np.random.seed(42)
 
-    bootstrapped_path = 'documentation/04_sprint_581/bootstrapped_train.jsonl'
+    bootstrapped_path = 'documentation/08_sprint/bootstrapped_train.jsonl'
     dev_path = 'data/processed/validation.jsonl'
-    al_output_path = 'documentation/04_sprint_581/al_ranked.jsonl'
+    al_output_path = 'documentation/08_sprint/al_ranked.jsonl'
 
     all_train = load_jsonl(bootstrapped_path)
     dev_data = load_jsonl(dev_path)

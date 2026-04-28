@@ -10,6 +10,7 @@ Tags: `Fraud Analysis` | `AI Safety` | `Social Engineering` | `Multilingual NLP`
 Root
 ├── LICENSE
 ├── README.md
+├── requirements.txt
 ├── data/
 │   ├── processed/
 │   │   ├── test.jsonl
@@ -20,11 +21,10 @@ Root
 │   └── source/
 │       └── resources.md
 ├── documentation/
-│   ├── 01_sprint_523/
-│   │   └── preprocess.md
-│   ├── 01_sprint_581/
+│   ├── 01_sprint/                          
+│   │   ├── preprocess.md
 │   │   └── team_contract.md
-│   ├── 02_sprint_523/
+│   ├── 02_sprint/                          
 │   │   ├── Script Documentation/
 │   │   │   ├── corpus_stats.md
 │   │   │   ├── token_count.md
@@ -33,7 +33,7 @@ Root
 │   │   ├── corpus_analysis.md
 │   │   ├── corpus_readme.md
 │   │   └── references.md
-│   ├── 03_sprint_523/
+│   ├── 03_sprint/                          
 │   │   ├── Annotation/
 │   │   │   ├── annotation_dz.csv
 │   │   │   ├── annotation_mw.jsonl
@@ -51,24 +51,53 @@ Root
 │   │   ├── build_subcorpora.md
 │   │   ├── iaa_study.md
 │   │   └── web_interface.md
-│   ├── 04_sprint_523/
-│   ├── 05_sprint_523/
-│   │   └── tutorial.md
-│   └── team_contract.md
+│   ├── 04_sprint/                          
+│   ├── 05_sprint/                          
+│   │   ├── 01_sprint_progress_report.pdf
+│   │   ├── split.md
+│   │   ├── split_reason.md
+│   │   ├── team_contract.md
+│   │   ├── train_neural_baseline.md
+│   │   └── train_traditional_baseline.md
+│   ├── 06_sprint/                          
+│   │   ├── create_transfer_data.md
+│   │   ├── ensemble_baseline.md
+│   │   ├── motivated_ensembling.md
+│   │   └── transfer_pretrained_embeddings.md
+│   ├── 07_sprint/                          
+│   │   ├── ablation.md
+│   │   ├── mtl_neural.md
+│   │   ├── mtl_traditional.md
+│   │   └── silver_ner.md
+│   ├── 08_sprint/                          
+│   │   ├── active_learning.md
+│   │   ├── al_ranked.jsonl
+│   │   ├── augmented_data.jsonl
+│   │   ├── bootstrap.md
+│   │   ├── bootstrapped_train.jsonl
+│   │   ├── few_shot.md
+│   │   ├── few_shot_train.jsonl
+│   │   ├── FRAUD_Final_Report.pdf
+│   │   └── new_annotations_YH.jsonl
+│   └── 09_sprint/                          
+│       └── tutorial.md
 ├── img/
 │   └── web/
 │       └── web_interface.png
-├── requirements.txt
+├── models/
+│   ├── baseline_neural/
+│   ├── mtl_neural/
+│   ├── transfer_neural_baseline_repro/
+│   ├── transfer_neural_frozen3/
+│   └── transfer_neural_full/
 ├── src/
-│   ├── 01_sprint_523/
+│   ├── 01_sprint/                          
 │   │   └── preprocess.py
-│   ├── 01_sprint_581/
-│   │   └── split.py
-│   ├── 02_sprint_523/
+│   ├── 02_sprint/                          
 │   │   ├── corpus_stats.py
 │   │   ├── token_count.py
 │   │   └── website_scrape.py
-│   ├── 03_sprint_523/
+│   ├── 03_sprint/                          
 │   │   ├── best_annotations.py
 │   │   ├── build_subcorpora.py
 │   │   ├── convert_csv2json_annotators.py
@@ -76,50 +105,66 @@ Root
 │   │   ├── corpus_translation_google_api.ipynb
 │   │   ├── csv_annotations.py
 │   │   └── generate_iaa.py
-│   ├── 04_sprint_523/
+│   ├── 04_sprint/                          
 │   │   └── web/
 │   │       ├── Dockerfile
+│   │       ├── requirements.txt
 │   │       ├── backend/
 │   │       │   ├── analyzers.py
-│   │       │   ├── corpus_data/
-│   │       │   │   ├── annotated/
-│   │       │   │   │   └── annotations_best.jsonl
-│   │       │   │   └── raw/
-│   │       │   │       ├── chinese_sub_corpus_translated_api.json
-│   │       │   │       └── english_sub_corpus.json
 │   │       │   ├── main.py
 │   │       │   ├── test_load.py
-│   │       │   └── whoosh_index/
-│   │       │       ├── MAIN_WRITELOCK
-│   │       │       ├── MAIN_lehoiut91m1cc1ut.seg
-│   │       │       └── _MAIN_1.toc
+│   │       │   └── corpus_data/
+│   │       │       ├── annotated/
+│   │       │       │   └── annotations_best.jsonl
+│   │       │       └── raw/
+│   │       │           ├── chinese_sub_corpus_translated_api.json
+│   │       │           └── english_sub_corpus.json
 │   │       ├── frontend/
 │   │       │   ├── about.html
 │   │       │   ├── about.js
 │   │       │   ├── functions.html
-│   │       │   ├── img/
-│   │       │   │   ├── DarwinZhang.png
-│   │       │   │   ├── Full.jpg
-│   │       │   │   ├── MarcoWang.png
-│   │       │   │   ├── TianhaoCao.png
-│   │       │   │   └── YusenHuang.png
 │   │       │   ├── index.html
 │   │       │   ├── script.js
 │   │       │   ├── statistics.html
 │   │       │   ├── statistics.js
-│   │       │   └── style.css
-│   │       ├── img/
-│   │       │   ├── DarwinZhang.png
-│   │       │   ├── MarcoWang.png
-│   │       │   ├── TianhaoCao.png
-│   │       │   └── YusenHuang.png
-│   │       └── requirements.txt
-│   └── 05_sprint_523/
+│   │       │   ├── style.css
+│   │       │   └── img/
+│   │       │       ├── DarwinZhang.png
+│   │       │       ├── Full.jpg
+│   │       │       ├── MarcoWang.png
+│   │       │       ├── TianhaoCao.png
+│   │       │       └── YusenHuang.png
+│   │       └── img/
+│   │           ├── DarwinZhang.png
+│   │           ├── MarcoWang.png
+│   │           ├── TianhaoCao.png
+│   │           └── YusenHuang.png
+│   ├── 05_sprint/                          
+│   │   ├── baseline_neural.py
+│   │   ├── split.py
+│   │   └── train_traditional_baseline.py
+│   ├── 06_sprint/                          
+│   │   ├── create_transfer_data.py
+│   │   ├── ensemble_baseline.py
+│   │   ├── motivated_ensembling.py
+│   │   ├── transfer_neural.py
+│   │   └── transfer_traditional.py
+│   ├── 07_sprint/                          
+│   │   ├── ablation_1_char_tfidf.py
+│   │   ├── ablation_2_ner_lambda.py
+│   │   ├── ablation_3_ensemble_components.py
+│   │   ├── ablation_4_bilingual_fasttext.py
+│   │   ├── mtl_neural.py
+│   │   ├── mtl_traditional.py
+│   │   └── silver_ner.py
+│   └── 08_sprint/                          
+│       ├── active_learning.py
+│       ├── bootstrap.py
+│       └── few_shot.py
 └── tests/
     ├── __init__.py
     └── test_scrape.py
-```
----
+```---
 ## Project Proposal
 
 ### Evolving Beyond Spam in the Era of AI Safety

@@ -12,11 +12,11 @@ def main():
     random.seed(42)
     np.random.seed(42)
 
-    bootstrapped_path = 'documentation/04_sprint_581/bootstrapped_train.jsonl'
-    al_ranked_path = 'documentation/04_sprint_581/al_ranked.jsonl'
-    augmented_path = 'documentation/04_sprint_581/augmented_data.jsonl'
+    bootstrapped_path = 'documentation/08_sprint/bootstrapped_train.jsonl'
+    al_ranked_path = 'documentation/08_sprint/al_ranked.jsonl'
+    augmented_path = 'documentation/08_sprint/augmented_data.jsonl'
     dev_path = 'data/processed/validation.jsonl'
-    few_shot_output_path = 'documentation/04_sprint_581/few_shot_train.jsonl'
+    few_shot_output_path = 'documentation/08_sprint/few_shot_train.jsonl'
 
     # Load base train (excluding bootstrapped model guesses)
     all_bootstrapped_train = load_jsonl(bootstrapped_path)

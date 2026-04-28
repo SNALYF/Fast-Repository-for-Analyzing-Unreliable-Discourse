@@ -13,7 +13,7 @@ Description:
 
     Loss:  L = L_cls + LAMBDA_NER * L_ner
     Silver NER labels are produced on the fly with spaCy en_core_web_sm.
-    See documentation/03_sprint_581/README.md for the justification of
+    See documentation/07_sprint/mtl_neural.md for the justification of
     NER as the auxiliary task.
 """
 
