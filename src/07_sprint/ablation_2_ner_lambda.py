@@ -46,7 +46,7 @@ warnings.filterwarnings("ignore")
 # Add sprint-3 src to path so we can import silver_ner
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.normpath(os.path.join(SCRIPT_DIR, "..", ".."))
-sys.path.insert(0, os.path.join(PROJECT_ROOT, "src", "03_sprint_581"))
+sys.path.insert(0, os.path.join(PROJECT_ROOT, "src", "07_sprint"))
 
 from silver_ner import align_bio_to_wordpieces, NUM_NER_LABELS, PAD_NER_ID  # noqa: E402
 

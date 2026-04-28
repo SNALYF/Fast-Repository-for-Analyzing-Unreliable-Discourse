@@ -7,7 +7,7 @@ Description:
     Shared utility for producing silver NER annotations with spaCy and
     aligning them with HuggingFace WordPiece tokens as BIO tag ids.
 
-    The auxiliary NER task is justified in documentation/03_sprint_581/README.md
+    The auxiliary NER task is justified in documentation/07_sprint/silver_ner.md
     — phishing/spam emails have a characteristic ORG/MONEY/DATE/PERSON profile
     that the encoder is encouraged to attend to under the joint objective.
 """

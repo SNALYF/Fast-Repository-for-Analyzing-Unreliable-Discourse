@@ -48,7 +48,7 @@ def main():
         os.path.join(
             script_dir,
             "..",
-            "04_sprint_523",
+            "04_sprint",
             "web",
             "backend",
             "corpus_data",

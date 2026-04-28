@@ -32,7 +32,7 @@ def main():
     random.seed(581)
     
     sprint2_train_path = "data/processed/transfer_train.jsonl" # The 1104 samples from last sprint
-    yh_path = "documentation/04_sprint_581/new_annotations_YH.jsonl"
+    yh_path = "documentation/08_sprint/new_annotations_YH.jsonl"
     dev_path = "data/processed/validation.jsonl"
     output_path = "data/processed/bootstrapped_train.jsonl"
     

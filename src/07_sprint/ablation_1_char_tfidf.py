@@ -208,7 +208,7 @@ def run_config_C_reference(train_texts, train_labels, eval_texts, eval_labels, s
         return None
 
     # Live reproduction if vectors are available
-    sys.path.insert(0, os.path.join(PROJECT_ROOT, "src", "02_sprint_581"))
+    sys.path.insert(0, os.path.join(PROJECT_ROOT, "src", "06_sprint"))
     from transfer_traditional import (
         load_fasttext_vec, build_embedding_lookup,
         mean_embed, build_tfidf_pipeline, build_feature_matrix,
