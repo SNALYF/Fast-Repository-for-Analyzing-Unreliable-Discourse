@@ -164,7 +164,7 @@ Root
 └── tests/
     ├── __init__.py
     └── test_scrape.py
-```---
+```
 ## Project Proposal
 
 ### Evolving Beyond Spam in the Era of AI Safety
